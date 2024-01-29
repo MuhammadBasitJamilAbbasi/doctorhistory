@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "910882082866",
+    "project_id": "shazadabbasi-ff248",
+    "storage_bucket": "shazadabbasi-ff248.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910882082866:android:67c260e981cb04a6da2c2b",
+        "android_client_info": {
+          "package_name": "com.bj.doctorhistorycheckuplifetime.doctorhistory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr2iIeBnAy6oW_rokmL81vhAXFUZx7uzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

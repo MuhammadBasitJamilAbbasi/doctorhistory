@@ -1,0 +1,3 @@
+class Exceptionhandler implements Exception{
+
+}
