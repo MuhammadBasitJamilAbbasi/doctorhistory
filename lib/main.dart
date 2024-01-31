@@ -1,3 +1,4 @@
+import 'package:doctorhistory/Screens/Allpatients.dart';
 import 'package:doctorhistory/Screens/Detailpatients.dart';
 import 'package:doctorhistory/Screens/values/Theme.dart';
 import 'package:doctorhistory/firebase_options.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.themeData,
-      home: Detailspatients(),
+      home:Allpatients(),
     );
   }
 }

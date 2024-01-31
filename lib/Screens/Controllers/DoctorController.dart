@@ -4,12 +4,15 @@ import 'dart:async';
 import 'package:doctorhistory/Screens/Apiservice.dart';
 import 'package:doctorhistory/Screens/Models/PaitentModel.dart';
 import 'package:doctorhistory/Screens/widgets/ErrorhandlingDialoge.dart';
+import 'package:doctorhistory/Screens/widgets/Snakebar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sn_progress_dialog/progress_dialog.dart';
 
 class DoctorController extends GetxController{
   final ApiService _apiService = ApiService();
+  RxString  selectedDate="".obs;
+  String imageurl="";
   final RxList<PaitentModel> patients = <PaitentModel>[].obs;
      RxInt count=0.obs;
      late Timer _timer;
@@ -65,18 +68,18 @@ class DoctorController extends GetxController{
 
       // Call the API service to add the patient
       bool success = await _apiService.addPatients(patientModel,context);
+      _progressDialog.close();
 
       // Close progress dialog
-      _progressDialog.close();
+
 
       // Show success/failure dialog based on API response
       if (success) {
         loadPatients();
-
-        ErrorhandlingDialoge(context,'New Patient','Patient added successfully','S');
         Get.back();
       } else {
-        ErrorhandlingDialoge(context,'New Patient','Fail to added Patient','F');
+        //showErrorMessage("Phonenumber Already taken Please use Unique Phonenumber ", context);
+        ErrorhandlingDialoge(context,'Fail','Phone number Already taken please use Unique','F');
       }
     } catch (error) {
       // Handle error
@@ -84,4 +87,9 @@ class DoctorController extends GetxController{
       ErrorhandlingDialoge(context,'New Patient','Fail to added Patient','F');
     }
   }
+
+
+
+
+
 }

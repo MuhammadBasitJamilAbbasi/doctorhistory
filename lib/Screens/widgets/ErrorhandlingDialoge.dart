@@ -1,5 +1,4 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void ErrorhandlingDialoge (BuildContext context,String title,String message,String type)
@@ -11,10 +10,11 @@ void ErrorhandlingDialoge (BuildContext context,String title,String message,Stri
         dialogType: DialogType.success,
         animType: AnimType.rightSlide,
         title: title,
-        titleTextStyle: TextStyle(color: Colors.black),
+        titleTextStyle: const TextStyle(color: Colors.black),
         desc: message,
+        btnOkColor: Colors.red,
         btnOkOnPress: () {},
-      )..show();
+      ).show();
     }else
       {
         AwesomeDialog(
@@ -22,10 +22,10 @@ void ErrorhandlingDialoge (BuildContext context,String title,String message,Stri
           dialogType: DialogType.error,
           animType: AnimType.leftSlide,
           title: title,
-          titleTextStyle: TextStyle(color: Colors.black),
+          titleTextStyle: const TextStyle(color: Colors.black),
           desc: message,
           btnOkOnPress: () {},
-        )..show();
+        ).show();
       }
 
 }

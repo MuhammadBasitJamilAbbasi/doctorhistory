@@ -12,7 +12,17 @@ class ApiService{
 
   Future<bool> addPatients(PaitentModel patientModel, BuildContext context) async {
     try {
-      await _firestore.collection('patients').add(patientModel.toMap());
+      QuerySnapshot querySnapshot = await _firestore
+          .collection('patients')
+          .where('pphone', isEqualTo: patientModel.pphone)
+          .get();
+
+      if (querySnapshot.docs.isNotEmpty) {
+        // Phone number already exists, return false
+
+        return false;
+      }
+      await _firestore.collection('patients').doc(patientModel.pphone).set(patientModel.toMap());
       return true;
     } catch (error) {
       // Handle error
@@ -33,4 +43,8 @@ class ApiService{
       throw error;
     }
   }
+
+
+
+
 }
